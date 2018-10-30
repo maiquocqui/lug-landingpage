@@ -4,20 +4,313 @@
 		+pos(abs, 50% 0 null 0)
 		color: $white
 		text-align: center
+		+media-breakpoint-down(md)
 		.big
 			text-transform: uppercase
 			font-weight: 500
 			letter-spacing: 10px
 			+fs(80rem)
+			+media-breakpoint-down(md)
+				+fs(40rem)
+			+media-breakpoint-down(xs)
+				+fs(24rem)
 		.small
 			font-family: 'Times New Roman', Times, serif
 			font-style: italic
 			+fs(32rem)
+			+media-breakpoint-down(md)
+				+fs(24rem)
+			+media-breakpoint-down(xs)
+				+fs(14rem)
 .vc-section
 	background: $white
 	padding: 40px 0
-	.vc-title
-		+fs(28rem)
+	.img1
+		+media-breakpoint-down(xs)
+			margin-bottom: 20px
+.vc-title
+	display: block
+	text-align: center
+	+fs(28rem)
+	text-transform: uppercase
+	font-weight: 500
+	margin-bottom: 10px
+	color: $main
+	+media-breakpoint-down(xs)
+		+fs(20rem)
+		line-height: 1.3
+.vc-product
+	padding: 40px 0
+	.vcpr-col
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
+		.vcpr-img
+			display: block
+			+pos(rel,null)
+			.img1, .img2
+				+transition(all,0.2s)
+			.img1
+				+pos(rel,null)
+				z-index: 2
+				transition-delay: 0.2s
+			.img2
+				+pos(abs, 0 null 0 0)
+				right: 0
+				z-index: 3
+				+transform(rotateY(90deg))
+				transition-delay: 0s
+			&:hover
+				.img1
+					+transform(rotateY(90deg))
+					transition-delay: 0s
+				.img2
+					+transform(rotateY(0deg))
+					transition-delay: 0.2s
+		.vc-des
+			+fs(18rem)
+			border-top: 1px solid darken($white,10%)
+			padding: 15px 0
+			margin-top: 20px
+			text-align: center
+			display: block
+.vc-collection
+	.collection-row
+		margin-bottom: 60px
+		+media-breakpoint-down(xs)
+			margin-bottom: 30px
+	.img1, .img4
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: center
+		+media-breakpoint-down(xs)
+			margin: 30px 0
+		img
+			max-width: 70%
+			+media-breakpoint-down(xs)
+				max-width: 80%
+	.img5, .img6
+		+flexbox
+		justify-content: center
+		height: 50%
+		+media-breakpoint-down(xs)
+			margin: -20px 0 50px
+			align-items: center
+			height: auto
+		img
+			max-width: 70%
+			+media-breakpoint-down(xs)
+				max-width: 80%
+	+media-breakpoint-up(md)
+		.img5
+			align-items: flex-start
+		.img6
+			align-items: flex-end
+					
+.vc-product-list
+	.title-wrap
+		+pos(rel,null)
+		margin-bottom: 40px
+		&:before
+			content: ''
+			display: block
+			width: 100%
+			height: 0
+			border-bottom: 1px solid darken($white,10%)
+			+pos(abs, 50% 0 null 0)
+			z-index: 1
+		.vc-title
+			display: inline-block
+			background: $white
+			+pos(rel,null)
+			z-index: 3
+			margin-bottom: 0
+			padding: 0px 15px
+	.btn-wrap
+		text-align: center
+		padding: 60px 0
+	.btn-viewmore
+		display: inline-block
+		background: $black
+		color: $white
+		text-align: center
+		+fs(24rem)
 		text-transform: uppercase
-		font-weight: 500
-		margin-bottom: 10px
+		padding: 10px 40px
+		border: 1px solid $black
+		+media-breakpoint-down(sm)
+			+fs(13rem)
+			padding: 7px 15px
+		&:hover
+			background: $white
+			color: $black
+
+/* hết nội dung */
+
+
+.product-list, .product-list2
+	background: $white
+	.col-custom
+		+media-breakpoint-up(xl)
+			+flex(0 0 20%)
+	.product-card
+		height: 100%
+		background: $white
+		figure
+			+pos(rel,null)
+			overflow: hidden
+			height: 100%
+			.product-img
+				display: block
+				img
+					width: 100%
+			figcaption
+				padding: 10px
+				+pos(rel,null)
+			.comment-count
+				+fs(12rem)
+				font-style: italic
+				color: darken($white,40%)
+				margin-bottom: 5px
+			.promotion
+				color: $white
+				+fs(12rem)
+				font-weight: 500
+				line-height: 1
+				padding: 3px 5px
+				+bor-rad(3px)
+				+pos(abs,33px 10px null null)
+				&.tragop
+					background: linear-gradient(-220deg, $amber, $orange)
+				&.moi
+					background: linear-gradient(-220deg, $lgreen,$dgreen)
+			.product-name
+				+fs(15rem)
+				font-weight: 600
+				margin-bottom: 5px
+				display: -webkit-box
+				height: 0.9375rem*1*1
+				line-height: 1
+				-webkit-line-clamp: 1
+				-webkit-box-orient: vertical
+				overflow: hidden
+				text-overflow: ellipsis
+				a
+					color: $main
+					&:hover
+						color: $red
+			.product-price
+				+fs(14rem)
+				margin-bottom: 5px
+				.new
+					color: $red
+					font-weight: 700
+			.detail-popup
+				+pos(abs, 0 null 0 0)
+				right: 0
+				z-index: 5
+				background: $white
+				padding: 10px
+				opacity: 0
+				visibility: hidden
+				+transition(all,0.5s)
+				.product-detail
+					.popup-promotion
+						border-bottom: 1px solid darken($white,10%)
+						padding-bottom: 5px
+			.btn-wrap
+				+pos(abs, null 0 0 0)
+				padding: 10px 10px
+				z-index: 10
+				opacity: 0
+				visibility: hidden
+				+transition(all,0.5s)
+				background: $white
+				+flexbox
+				align-items: center
+				align-content: center
+				justify-content: space-between
+				&:before
+					content: ''
+					height: 30px
+					display: block
+					background: linear-gradient(color-rgba($white,0),color-rgba($white,1))
+					+pos(abs, null 0 100% 0)
+				.btn-buy
+					+mainbutton($orange,$red)
+					background: $maingradient
+					box-shadow: 0px 10px 20px -10px $red
+					display: inline-block
+					line-height: 30px
+					text-transform: uppercase
+					+fs(12rem)
+					padding: 0px 20px
+					+media-breakpoint-down(lg)
+						padding: 0px 15px
+						+fs(11rem)
+
+			.product-detail
+				+fs(12rem)
+				color: darken($white,60%)
+				display: block
+				span
+					display: block
+					margin-bottom: 5px
+				.popup-promotion
+					ul
+						list-style-type: disc
+						padding-left: 15px
+						display: block
+						display: -webkit-box
+						height: 0.75rem*1.5*2
+						-webkit-line-clamp: 2
+						-webkit-box-orient: vertical
+						overflow: hidden
+						text-overflow: ellipsis
+						li
+				.item-color
+					+flexbox
+					li
+						+ li
+							margin-left: 5px
+						span
+							display: block
+							width: 12px
+							height: 12px
+							+bor-rad(50px)
+			.btn-compare
+				display: block
+				+fs(13rem)
+				text-align: right
+				color: $red
+				&:hover
+					color: darken($red,10%)
+			&:hover
+				.detail-popup
+					opacity: 1
+					visibility: visible
+				.btn-wrap
+					// transition-delay: 0.5s
+					opacity: 1
+					visibility: visible
+			&.item-outstock
+				.detail-popup
+					display: none
+				.btn-wrap
+					display: none
+				.product-img, figcaption
+					opacity: 0.5
+					filter: grayscale(100%)
+				.outofstock
+					+pos(abs,50% null null 50%)
+					+transform(translate(-50%,-50%)rotateZ(-20deg))
+					background: $maingradient
+					color: $white
+					text-transform: uppercase
+					line-height: 40px
+					padding: 0px 20px
+					+bor-rad(5px)
+					z-index: 5
+					+fs(13rem)
+					white-space: nowrap
+					opacity: 0.8
