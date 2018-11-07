@@ -6584,6 +6584,11 @@ img {
   .bt-product .bt-promotion-list .bt-promotion-col {
     display: block;
     margin-bottom: 10px; }
+  @media (min-width: 1200px) {
+    .bt-product .product-wrap .item-prdWrap.s2 {
+      padding: 15px 30px; } }
+  .bt-product .product-wrap .item-prdWrap.s2 .product-card {
+    border: none !important; }
 
 .vc-banner {
   position: relative; }
@@ -6784,6 +6789,15 @@ img {
   .vc-product-list .btn-viewmore:hover {
     background: #ffffff;
     color: #000000; }
+
+@media (min-width: 1200px) {
+  .vc-product-list .product-wrap .item-prdWrap.s2 {
+    padding: 15px 30px; } }
+
+.vc-product-list .product-wrap .item-prdWrap.s2 .product-card {
+  border: none !important; }
+  .vc-product-list .product-wrap .item-prdWrap.s2 .product-card .product-img {
+    background: #eee; }
 
 /* hết nội dung */
 .product-list, .product-list2 {
